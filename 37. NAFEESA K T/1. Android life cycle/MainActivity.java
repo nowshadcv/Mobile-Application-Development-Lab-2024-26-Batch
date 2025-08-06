@@ -1,13 +1,9 @@
-package com.example.loginform;
+package com.example.alc2025;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,24 +11,31 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView username = (TextView)findViewById(R.id.username);
-        TextView password = (TextView)findViewById(R.id.password);
-        Button loginbtn = (Button)findViewById(R.id.loginbtn);
-        loginbtn.setOnClickListener(new View.OnClickListener(){
+        Log.d("lifecycle","onCreate invoked");
+    }
+    protected void onStart() {
+        super.onStart();
+        Log.d("lifecycle", "onStart invoked");
+    }
+    protected void onResume() {
+        super.onResume();
+        Log.d("lifecycle", "onResume invoked");
+    }
 
-            @Override
-            public void onClick(View view) {
-                if(username.getText().toString().equals("admin") && password.getText().toString().equals("123456"))
-                {
-                    Toast.makeText(MainActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-
+    protected void onPause() {
+        super.onPause();
+        Log.d("lifecycle", "onPause invoked");
+    }
+    protected void onStop() {
+        super.onStop();
+        Log.d("lifecycle", "onStop invoked");
+    }
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("lifecycle", "onRestart invoked");
+    }
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("lifecycle", "onDestroy invoked");
     }
 }
