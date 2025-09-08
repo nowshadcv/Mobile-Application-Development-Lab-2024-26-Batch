@@ -20,12 +20,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        username = (EditText) findViewById(R.id.username);
-        mobilenum = (EditText) findViewById(R.id.number);
-        email = (EditText) findViewById(R.id.email);
-        pass1 = (EditText) findViewById(R.id.password);
-        pass2 = (EditText) findViewById(R.id.conpassword);
-        submit = (Button) findViewById(R.id.loginbtn);
+        username = findViewById(R.id.username);
+        mobilenum = findViewById(R.id.number);
+        email = findViewById(R.id.email);
+        pass1 = findViewById(R.id.password);
+        pass2 = findViewById(R.id.conpassword);
+        submit = findViewById(R.id.loginbtn);
 
         sharedPreferences = getSharedPreferences("UserDetails", MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String usernames = username.getText().toString().trim();
-                int mobilei = Integer.parseInt(mobilenum.getText().toString().trim());
+                String mobiles = mobilenum.getText().toString().trim();
                 String emails = email.getText().toString().trim();
                 String pass1s = pass1.getText().toString().trim();
                 String pass2s = pass2.getText().toString().trim();
@@ -42,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
                 if (usernames.isEmpty()) {
                     username.setError("Username is Empty");
                     username.requestFocus();
+                    return;
+                }
+
+                if (mobiles.isEmpty()) {
+                    mobilenum.setError("Mobile number is Empty");
+                    mobilenum.requestFocus();
                     return;
                 }
 
@@ -69,10 +75,11 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
+                // ✅ No crash now
                 Toast.makeText(MainActivity.this, "Registration Successful", Toast.LENGTH_LONG).show();
 
                 editor.putString("keyusername", usernames);
-                editor.putInt("keymobile", mobilei);
+                editor.putString("keymobile", mobiles);  // store as String, not int
                 editor.putString("keyemail", emails);
                 editor.putString("keypassword", pass2s);
                 editor.apply();
