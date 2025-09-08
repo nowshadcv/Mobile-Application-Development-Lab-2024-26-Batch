@@ -74,12 +74,10 @@ public class MainActivity extends AppCompatActivity {
                     pass2.requestFocus();
                     return;
                 }
-
-                // ✅ No crash now
                 Toast.makeText(MainActivity.this, "Registration Successful", Toast.LENGTH_LONG).show();
 
                 editor.putString("keyusername", usernames);
-                editor.putString("keymobile", mobiles);  // store as String, not int
+                editor.putString("keymobile", mobiles);
                 editor.putString("keyemail", emails);
                 editor.putString("keypassword", pass2s);
                 editor.apply();
