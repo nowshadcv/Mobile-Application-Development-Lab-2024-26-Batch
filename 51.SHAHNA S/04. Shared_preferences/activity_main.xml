@@ -11,39 +11,37 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <!-- Name -->
+        
         <EditText
-            android:id="@+id/etName"
+            android:id="@+id/Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Name"
             android:inputType="textPersonName" />
 
-        <!-- Age -->
+        
         <EditText
-            android:id="@+id/etAge"
+            android:id="@+id/Age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Age"
             android:inputType="number" />
-
-        <!-- Email -->
+        
         <EditText
-            android:id="@+id/etEmail"
+            android:id="@+id/Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
             android:inputType="textEmailAddress" />
 
-        <!-- Phone -->
+    
         <EditText
-            android:id="@+id/etPhone"
+            android:id="@+id/Phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone"
             android:inputType="phone" />
 
-        <!-- Gender RadioGroup -->
         <RadioGroup
             android:id="@+id/radioGroupGender"
             android:layout_width="wrap_content"
@@ -52,19 +50,19 @@
             android:layout_marginTop="10dp">
 
             <RadioButton
-                android:id="@+id/rbMale"
+                android:id="@+id/Male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Male" />
 
             <RadioButton
-                android:id="@+id/rbFemale"
+                android:id="@+id/Female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Female" />
 
             <RadioButton
-                android:id="@+id/rbOther"
+                android:id="@+id/Other"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Other" />
@@ -72,32 +70,32 @@
 
        
         <CheckBox
-            android:id="@+id/cbMath"
+            android:id="@+id/Math"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mathematics" />
 
         <CheckBox
-            android:id="@+id/cbScience"
+            android:id="@+id/Science"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Science" />
 
         <CheckBox
-            android:id="@+id/cbEnglish"
+            android:id="@+id/English"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="English" />
 
         <CheckBox
-            android:id="@+id/cbHistory"
+            android:id="@+id/History"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="History" />
 
         
         <Button
-            android:id="@+id/btnRegister"
+            android:id="@+id/Register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Register"
