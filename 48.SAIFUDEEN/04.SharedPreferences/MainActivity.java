@@ -12,50 +12,50 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText etName, etAge, etEmail, etPhone;
-    RadioGroup radioGroupGender;
-    CheckBox cbMath, cbScience, cbEnglish, cbHistory;
-    Button btnRegister;
+    EditText Name, Age, Email, Phone;
+    RadioGroup Gender;
+    CheckBox Math, Science, English, History;
+    Button Register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        etName = findViewById(R.id.etName);
-        etAge = findViewById(R.id.etAge);
-        etEmail = findViewById(R.id.etEmail);
-        etPhone = findViewById(R.id.etPhone);
-        radioGroupGender = findViewById(R.id.radioGroupGender);
-        cbMath = findViewById(R.id.cbMath);
-        cbScience = findViewById(R.id.cbScience);
-        cbEnglish = findViewById(R.id.cbEnglish);
-        cbHistory = findViewById(R.id.cbHistory);
-        btnRegister = findViewById(R.id.btnRegister);
+        Name = findViewById(R.id.Name);
+        Age = findViewById(R.id.Age);
+        Email = findViewById(R.id.Email);
+        Phone = findViewById(R.id.Phone);
+        Gender = findViewById(R.id.Gender);
+        Math = findViewById(R.id.Math);
+        Science = findViewById(R.id.Science);
+        English = findViewById(R.id.English);
+        History = findViewById(R.id.History);
+        Register = findViewById(R.id.Register);
 
-        btnRegister.setOnClickListener(new View.OnClickListener() {
+        Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String name = etName.getText().toString();
-                String age = etAge.getText().toString();
-                String email = etEmail.getText().toString();
-                String phone = etPhone.getText().toString();
+                String name = Name.getText().toString();
+                String age = Age.getText().toString();
+                String email = Email.getText().toString();
+                String phone = Phone.getText().toString();
 
                
-                int selectedId = radioGroupGender.getCheckedRadioButtonId();
+                int Id = Gender.getCheckedRadioButtonId();
                 String gender = "";
-                if (selectedId != -1) {
-                    RadioButton selectedRadio = findViewById(selectedId);
-                    gender = selectedRadio.getText().toString();
+                if (Id != -1) {
+                    RadioButton Radio = findViewById(Id);
+                    gender = Radio.getText().toString();
                 }
 
                 
                 StringBuilder subjects = new StringBuilder();
-                if (cbMath.isChecked()) subjects.append("Mathematics ");
-                if (cbScience.isChecked()) subjects.append("Science ");
-                if (cbEnglish.isChecked()) subjects.append("English ");
-                if (cbHistory.isChecked()) subjects.append("History ");
+                if (Math.isChecked()) subjects.append("Mathematics ");
+                if (Science.isChecked()) subjects.append("Science ");
+                if (English.isChecked()) subjects.append("English ");
+                if (History.isChecked()) subjects.append("History ");
 
                
                 Toast.makeText(MainActivity.this,
