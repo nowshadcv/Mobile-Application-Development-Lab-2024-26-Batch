@@ -1,31 +1,47 @@
 package com.example.sharedpreferences;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    EditText username,mobilenum, email, pass1, pass2;
+
+    EditText name, rollno, email, mobilenum;
+    RadioGroup genderGroup;
+    CheckBox subjectMath, subjectScience, subjectEnglish, subjectHistory;
     Button submit;
+
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        username = (EditText) findViewById(R.id.username);
-        mobilenum = (EditText) findViewById(R.id.number);
-        email = (EditText) findViewById(R.id.email);
-        pass1 = (EditText) findViewById(R.id.password);
-        pass2 = (EditText) findViewById(R.id.conpassword);
-        submit = (Button) findViewById(R.id.loginbtn);
+        
+        name = findViewById(R.id.name);
+        rollno = findViewById(R.id.rollno);
+        email = findViewById(R.id.email);
+        mobilenum = findViewById(R.id.number);
+        genderGroup = findViewById(R.id.genderGroup);
+
+        subjectMath = findViewById(R.id.subject_math);
+        subjectScience = findViewById(R.id.subject_science);
+        subjectEnglish = findViewById(R.id.subject_english);
+        subjectHistory= findViewById(R.id.subject_history);
+
+        submit = findViewById(R.id.loginbtn);
 
         sharedPreferences = getSharedPreferences("UserDetails", MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -33,49 +49,69 @@ public class MainActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String usernames = username.getText().toString().trim();
-                int mobilei = Integer.parseInt(mobilenum.getText().toString().trim());
-                String emails = email.getText().toString().trim();
-                String pass1s = pass1.getText().toString().trim();
-                String pass2s = pass2.getText().toString().trim();
+                String nameStr = name.getText().toString().trim();
+                String rollStr = rollno.getText().toString().trim();
+                String emailStr = email.getText().toString().trim();
+                String mobileStr = mobilenum.getText().toString().trim();
 
-                if (usernames.isEmpty()) {
-                    username.setError("Username is Empty");
-                    username.requestFocus();
+                
+                if (nameStr.isEmpty()) {
+                    name.setError("Name is required");
+                    name.requestFocus();
                     return;
                 }
 
-                if (emails.isEmpty()) {
-                    email.setError("Input Email");
+                if (rollStr.isEmpty()) {
+                    rollno.setError("Roll No is required");
+                    rollno.requestFocus();
+                    return;
+                }
+
+                if (emailStr.isEmpty()) {
+                    email.setError("Email is required");
                     email.requestFocus();
                     return;
                 }
 
-                if (pass1s.isEmpty()) {
-                    pass1.setError("Enter Password");
-                    pass1.requestFocus();
+                if (mobileStr.isEmpty()) {
+                    mobilenum.setError("Mobile number is required");
+                    mobilenum.requestFocus();
                     return;
                 }
 
-                if (pass1s.length() < 6) {
-                    pass1.setError("Length must be minimum 6 characters");
-                    pass1.requestFocus();
+                
+                int selectedGenderId = genderGroup.getCheckedRadioButtonId();
+                String gender = "";
+                if (selectedGenderId != -1) {
+                    RadioButton selectedGender = findViewById(selectedGenderId);
+                    gender = selectedGender.getText().toString();
+                } else {
+                    Toast.makeText(MainActivity.this, "Please select Gender", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (!pass1s.equals(pass2s)) {
-                    pass2.setError("Password not Matched");
-                    pass2.requestFocus();
+                
+                StringBuilder subjects = new StringBuilder();
+                if (subjectMath.isChecked()) subjects.append("Mathematics ");
+                if (subjectScience.isChecked()) subjects.append("Science ");
+                if (subjectEnglish.isChecked()) subjects.append("English ");
+                if (subjectHistory.isChecked()) subjects.append("History ");
+
+                if (subjects.length() == 0) {
+                    Toast.makeText(MainActivity.this, "Please select at least one subject", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                
+                editor.putString("keyName", nameStr);
+                editor.putString("keyRollNo", rollStr);
+                editor.putString("keyEmail", emailStr);
+                editor.putString("keyMobile", mobileStr);
+                editor.putString("keyGender", gender);
+                editor.putString("keySubjects", subjects.toString().trim());
+                editor.apply();
 
                 Toast.makeText(MainActivity.this, "Registration Successful", Toast.LENGTH_LONG).show();
-
-                editor.putString("keyusername", usernames);
-                editor.putInt("keymobile", mobilei);
-                editor.putString("keyemail", emails);
-                editor.putString("keypassword", pass2s);
-                editor.apply();
             }
         });
     }
