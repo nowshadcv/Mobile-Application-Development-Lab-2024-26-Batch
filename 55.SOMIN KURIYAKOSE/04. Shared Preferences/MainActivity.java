@@ -1,18 +1,19 @@
-package com.example.sharedpreferences;
+package com.example.sp2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-
+import android.widget.*;
 
 public class MainActivity extends AppCompatActivity {
-    EditText username,mobilenum,email,pass1,pass2;
-    Button submit;
+
+    EditText ename, eage, eemail, ephone;
+    RadioGroup rgGender;
+    RadioButton rb1, rb2, rb3;
+    CheckBox ech0, ech1, ech2, ech3;
+    Button Register;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
@@ -20,71 +21,90 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        username=(EditText) findViewById(R.id.username);
-        mobilenum=(EditText) findViewById(R.id.number);
-        email=(EditText) findViewById(R.id.email);
-        pass1=(EditText) findViewById(R.id.password);
-        pass2=(EditText) findViewById(R.id.conpassword);
-        submit=(Button) findViewById(R.id.loginbtn);
-        sharedPreferences=getSharedPreferences("UserDetails",MODE_PRIVATE);
-        editor=sharedPreferences.edit();
-        submit.setOnClickListener(new View.OnClickListener() {
+
+        ename = findViewById(R.id.name);
+        eage = findViewById(R.id.age);
+        eemail = findViewById(R.id.email);
+        ephone = findViewById(R.id.phone);
+        rgGender = findViewById(R.id.rggender);
+        rb1 = findViewById(R.id.rdbtn1);
+        rb2 = findViewById(R.id.rdbtn2);
+        rb3 = findViewById(R.id.rdbtn3);
+        ech0 = findViewById(R.id.ch0);
+        ech1 = findViewById(R.id.ch1);
+        ech2 = findViewById(R.id.ch2);
+        ech3 = findViewById(R.id.ch3);
+        Register = findViewById(R.id.loginbtn);
+
+        sharedPreferences = getSharedPreferences("UserDetails", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+        // ✅ Save data when button clicked (your existing code)
+        Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String usernames=username.getText().toString().trim();
-                String mobilei=mobilenum.getText().toString().trim();
-                String emails=email.getText().toString().trim();
-                String pass1s=pass1.getText().toString().trim();
-                String pass2s=pass2.getText().toString().trim();
-                if (usernames.isEmpty())
-                {
-                    username.setError("Username is Empty");
-                    username.requestFocus();
-                    return;
-                }
-                if (mobilei.isEmpty())
-                {
-                    mobilenum.setError("Mobile number is Empty");
-                    mobilenum.requestFocus();
-                    return;
-                }
-                if (emails.isEmpty())
-                {
-                    email.setError("Input Email");
-                    email.requestFocus();
-                    return;
-                }
-                if (pass1s.isEmpty())
-                {
-                    pass1.setError("Enter Password");
-                    pass1.requestFocus();
-                    return;
-                }
-                if (pass2s.isEmpty())
-                {
-                    pass2.setError("Enter Password");
-                    pass2.requestFocus();
-                    return;
-                }
-                if (pass1s.length()<6)
-                {
-                    pass1.setError("Length must be minimum 6 characters");
-                    pass1.requestFocus();
-                    return;
-                }
-                if (!pass1s.equals(pass2s))
-                {
-                    pass2.setError("Password not matched");
-                    pass2.requestFocus();
-                    return;
-                }
-                Toast.makeText(MainActivity.this,"Registration Successful",Toast.LENGTH_LONG).show();
-                editor.putString("keyusername",usernames);
-                editor.putString("keymobile",mobilei);
-                editor.putString("keyemail",emails);
-                editor.putString("keypassword",pass2s);
-                editor.apply();
+                registerUser();
             }
         });
+    }
+    private void registerUser(){
+        String name = ename.getText().toString().trim();
+        String age = eage.getText().toString().trim();
+        String email = eemail.getText().toString().trim();
+        String phone = ephone.getText().toString().trim();
+
+        if(name.isEmpty())
+
+        {
+            ename.setError("Enter name");
+            ename.requestFocus();
+            return;
+        }
+        if(age.isEmpty())
+
+        {
+            ename.setError("Enter age");
+            ename.requestFocus();
+            return;
+        }
+        if(email.isEmpty())
+
+        {
+            ename.setError("Enter email");
+            ename.requestFocus();
+            return;
+        }
+        if(phone.isEmpty())
+
+        {
+            ename.setError("Enter phone number");
+            ename.requestFocus();
+            return;
+        }
+
+        int selectedId = rgGender.getCheckedRadioButtonId();
+        String gender = "";
+        if(selectedId !=-1)
+
+        {
+            RadioButton selectedGender = findViewById(selectedId);
+            gender = selectedGender.getText().toString();
+        }
+
+        StringBuilder subjects = new StringBuilder();
+        if(ech0.isChecked())subjects.append("Mathematics ");
+        if(ech1.isChecked())subjects.append("Science ");
+        if(ech2.isChecked())subjects.append("English ");
+        if(ech3.isChecked())subjects.append("History ");
+
+        editor.putString("name",name);
+        editor.putString("age",age);
+        editor.putString("email",email);
+        editor.putString("phone",phone);
+        editor.putString("gender",gender);
+        editor.putString("subject",subjects.toString());
+        editor.apply();
+
+        Toast.makeText(this,"Registered successfully :)",Toast.LENGTH_LONG).show();
     }
 }
