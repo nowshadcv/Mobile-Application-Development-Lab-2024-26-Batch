@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextName"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Age"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextAge"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextEmail"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Mobile Number"
+        android:inputType="phone" />
+
+    <TextView
+        android:id="@+id/textViewGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPhone"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="20dp"
+        android:text="Gender:"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupGender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewGender"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButtonMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Male" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Female" />
+
+        <RadioButton
+            android:id="@+id/radioButtonOther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Other" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textViewSubjects"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/radioGroupGender"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="20dp"
+        android:text="Subjects:"
+        android:textSize="16sp" />
+
+    <CheckBox
+        android:id="@+id/checkBoxMath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewSubjects"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="10dp"
+        android:text="Mathematics" />
+
+    <CheckBox
+        android:id="@+id/checkBoxEnglish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkBoxMath"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="10dp"
+        android:text="English" />
+
+    <CheckBox
+        android:id="@+id/checkBoxHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkBoxEnglish"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="10dp"
+        android:text="History" />
+
+    <CheckBox
+        android:id="@+id/checkBoxScience"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkBoxHistory"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="10dp"
+        android:text="Science" />
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkBoxScience"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Register" />
+
+</RelativeLayout>
