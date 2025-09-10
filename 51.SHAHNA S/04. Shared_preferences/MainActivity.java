@@ -12,9 +12,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText etName, etAge, etEmail, etPhone;
+    EditText Name, Age, Email, Phone;
     RadioGroup radioGroupGender;
-    CheckBox cbMath, cbScience, cbEnglish, cbHistory;
+    CheckBox Math, Science, English, History;
     Button btnRegister;
 
     @Override
@@ -22,25 +22,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        etName = findViewById(R.id.etName);
-        etAge = findViewById(R.id.etAge);
-        etEmail = findViewById(R.id.etEmail);
-        etPhone = findViewById(R.id.etPhone);
+        Name = findViewById(R.id.Name);
+        Age = findViewById(R.id.Age);
+        Email = findViewById(R.id.Email);
+        Phone = findViewById(R.id.Phone);
         radioGroupGender = findViewById(R.id.radioGroupGender);
-        cbMath = findViewById(R.id.cbMath);
-        cbScience = findViewById(R.id.cbScience);
-        cbEnglish = findViewById(R.id.cbEnglish);
-        cbHistory = findViewById(R.id.cbHistory);
-        btnRegister = findViewById(R.id.btnRegister);
+        Math = findViewById(R.id.Math);
+        Science = findViewById(R.id.Science);
+        English = findViewById(R.id.English);
+        History = findViewById(R.id.History);
+        Register = findViewById(R.id.Register);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String name = etName.getText().toString();
-                String age = etAge.getText().toString();
-                String email = etEmail.getText().toString();
-                String phone = etPhone.getText().toString();
+                String name = Name.getText().toString();
+                String age = Age.getText().toString();
+                String email = Email.getText().toString();
+                String phone = Phone.getText().toString();
 
                
                 int selectedId = radioGroupGender.getCheckedRadioButtonId();
@@ -52,10 +52,10 @@ public class MainActivity extends AppCompatActivity {
 
                 
                 StringBuilder subjects = new StringBuilder();
-                if (cbMath.isChecked()) subjects.append("Mathematics ");
-                if (cbScience.isChecked()) subjects.append("Science ");
-                if (cbEnglish.isChecked()) subjects.append("English ");
-                if (cbHistory.isChecked()) subjects.append("History ");
+                if (Math.isChecked()) subjects.append("Mathematics ");
+                if (Science.isChecked()) subjects.append("Science ");
+                if (English.isChecked()) subjects.append("English ");
+                if (History.isChecked()) subjects.append("History ");
 
                
                 Toast.makeText(MainActivity.this,
