@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="enter name" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="1dp"
+        android:layout_below="@+id/name"
+        android:hint="enter age"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="1dp"
+        android:layout_below="@+id/age"
+        android:hint="enter email"/>
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="1dp"
+        android:layout_below="@+id/email"
+        android:hint="enter phone number"/>
+
+    <RadioGroup
+        android:id="@+id/rggender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+    </RadioGroup>
+
+    <RadioButton
+        android:id="@+id/rdbtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phone"
+        android:layout_marginStart="20dp"
+        android:text="Male" />
+
+    <RadioButton
+        android:id="@+id/rdbtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phone"
+        android:layout_toRightOf="@+id/rdbtn1"
+        android:text="Female" />
+
+    <RadioButton
+        android:id="@+id/rdbtn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phone"
+        android:layout_toRightOf="@+id/rdbtn2"
+        android:text="Others" />
+
+    <CheckBox
+        android:id="@+id/ch0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rdbtn1"
+        android:layout_marginStart="20dp"
+        android:text="Mathematics"
+        />
+
+    <CheckBox
+        android:id="@+id/ch1"
+        android:layout_marginStart="20dp"
+        android:layout_below="@+id/ch0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Science"
+        />
+
+    <CheckBox
+        android:id="@+id/ch2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ch1"
+        android:layout_marginStart="20dp"
+        android:text="English"
+        />
+
+    <CheckBox
+        android:id="@+id/ch3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_below="@+id/ch2"
+        android:text="History"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ch3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:text="Register"/>
+
+
+</RelativeLayout>
