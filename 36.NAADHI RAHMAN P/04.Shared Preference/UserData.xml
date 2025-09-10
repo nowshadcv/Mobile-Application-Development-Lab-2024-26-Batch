@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="number">36</string>
+    <string name="gender">Female</string>
+    <string name="phone">987654321</string>
+    <string name="subjects">Mathematics,English,</string>
+    <string name="name">Naadhi Rahman</string>
+    <string name="email">naadhifaisal@gmail.com</string>
+</map>
