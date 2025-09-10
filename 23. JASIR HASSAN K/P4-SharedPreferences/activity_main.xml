@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#eeccff"
+        android:drawableLeft="@drawable/baseline_person_24"
+        android:drawablePadding="20dp"
+        android:hint=" Name"
+        android:textColorHint="@color/black"
+        android:padding="20dp"/>
+    <EditText
+        android:id="@+id/rollno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#eeccff"
+        android:drawableLeft="@drawable/baseline_phone_24"
+        android:drawablePadding="20dp"
+        android:hint=" Roll No"
+        android:textColorHint="@color/black"
+        android:padding="20dp" />
+    <EditText
+        android:id="@+id/mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rollno"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#eeccff"
+        android:drawableLeft="@drawable/baseline_email_24"
+        android:drawablePadding="20dp"
+        android:hint=" Email"
+        android:textColorHint="@color/black"
+        android:padding="20dp" />
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mail"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#eeccff"
+        android:drawableLeft="@drawable/baseline_password_24"
+        android:drawablePadding="20dp"
+        android:hint=" password"
+        android:textColorHint="@color/black"
+        android:padding="20dp" />
+
+    <TextView
+        android:id="@+id/gender_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/number"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:text="Gender"
+        android:textSize="20dp"/>
+    <RadioGroup
+        android:id="@+id/genders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gender_label"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Male" />
+        <RadioButton
+            android:id="@+id/female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text=" Female" />
+        <RadioButton
+            android:id="@+id/other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text=" Other" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/subjects"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/genders"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:text="Subjects"
+        android:textSize="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/subjects_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subjects"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp">
+
+        <CheckBox
+            android:id="@+id/mathematics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Mathematics" />
+        <CheckBox
+            android:id="@+id/science"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Science" />
+        <CheckBox
+            android:id="@+id/history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" History" />
+        <CheckBox
+            android:id="@+id/english"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" english" />
+    </LinearLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subjects_label"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="SUBMIT"/>
+
+
+</RelativeLayout>
