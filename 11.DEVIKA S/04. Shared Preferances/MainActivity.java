@@ -1,4 +1,4 @@
-package com.example.myapplicationmmm;
+package com.example.preference;
 
 import androidx.appcompat.app.AppCompatActivity;
 
