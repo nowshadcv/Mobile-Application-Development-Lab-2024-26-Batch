@@ -20,5 +20,6 @@ public class MainActivity extends AppCompatActivity {
         String index=editText.getText().toString();
         intent.putExtra("ImageIndex",index);
         startActivity(intent);
+        editText.setText("");
     }
 }
