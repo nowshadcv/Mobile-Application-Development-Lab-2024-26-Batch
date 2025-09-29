@@ -13,12 +13,12 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         Bundle bundle=getIntent().getExtras();
         if(bundle!=null){
-            String imgindex=bundle.getString("ImageIndex");
-            setImage(imgindex);
+            String index=bundle.getString("ImageIndex");
+            setImage(index);
         }
     }
     private void setImage(String index){
-        ImageView imageView=(ImageView)findViewById(R.id.img1);
+        ImageView imageView=findViewById(R.id.img1);
         switch (index){
             case "1":
                 imageView.setImageResource(R.drawable.pic1);
