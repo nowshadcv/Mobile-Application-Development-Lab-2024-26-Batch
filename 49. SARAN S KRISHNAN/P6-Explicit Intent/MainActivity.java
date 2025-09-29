@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this,MainActivity2.class);
         EditText editText = (EditText) findViewById(R.id.text);
         String index = editText.getText().toString();
-        intent.putExtra("imageIndex", index);
+        intent.putExtra("ImageIndex", index);
+        startActivity(intent);
     }
 }
