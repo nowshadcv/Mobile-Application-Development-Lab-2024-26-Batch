@@ -1,7 +1,5 @@
 package com.example.alc2025;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 
