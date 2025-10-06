@@ -1,0 +1,44 @@
+package com.example.toggle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
+import android.view.View;
+import android.os.Bundle;
+import android.widget.ImageView;
+
+public class MainActivity extends AppCompatActivity {
+    ImageView i1,i2,i3;
+
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        i1=(ImageView)findViewById(R.id.img1);
+        i2=(ImageView)findViewById(R.id.img2);
+        i3=(ImageView)findViewById(R.id.img3);
+        i1.setOnClickListener(this::onclick);
+        i2.setOnClickListener(this::onclick);
+        i3.setOnClickListener(this::onclick);
+    }
+    public void onclick(View v){
+        if(v.getId()==R.id.img1) {
+            i1.setVisibility(View.GONE);
+            i2.setVisibility(View.VISIBLE);
+        }
+        else if(v.getId()==R.id.img2)
+        {
+            i2.setVisibility(View.GONE);
+            i3.setVisibility(View.VISIBLE);
+
+        }
+        else
+        {
+            i3.setVisibility(View.GONE);
+            i1.setVisibility(View.VISIBLE);
+
+        }
+
+    }
+}
