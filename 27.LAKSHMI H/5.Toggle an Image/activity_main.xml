@@ -20,12 +20,5 @@
         android:src="@drawable/pencil"
         android:layout_gravity="left|top"/>
 
-    <ImageView
-        android:id="@+id/img3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/eraser"
-        android:layout_gravity="left|top"
-        android:visibility="gone"/>
 
 </FrameLayout>
