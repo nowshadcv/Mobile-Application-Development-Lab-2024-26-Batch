@@ -1,7 +1,6 @@
-package com.example.optionmenu2025;
+package com.example.optionmenu;
 
 import android.content.Intent;
-import android.media.audiofx.Equalizer;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -16,7 +15,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.optionmenu2025.databinding.ActivityMainBinding;
+import com.example.optionmenu.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -63,32 +62,38 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent intent=new Intent(MainActivity.this,settings.class);
+            Intent intent=new Intent(MainActivity.this, Setting.class);
             startActivity(intent);
             return true;
         }
-        if (id == R.id.action_privacypolicy) {
-            Intent intent=new Intent(MainActivity.this,privacypolicy.class);
+        else
+        if (id == R.id.action_privacypolicy){
+            Intent intent=new Intent(MainActivity.this, Privacy_policy.class);
             startActivity(intent);
             return true;
         }
-        if (id == R.id.action_contactus) {
-            Intent intent=new Intent(MainActivity.this,contactus.class);
+        else if(id == R.id.action_help){
+            Intent intent=new Intent(MainActivity.this, Help.class);
             startActivity(intent);
             return true;
         }
-        if (id == R.id.action_help) {
-            Intent intent=new Intent(MainActivity.this,Help.class);
+        else if (id == R.id.action_terms) {
+            Intent intent=new Intent(MainActivity.this, Terms_and_conditions.class);
             startActivity(intent);
             return true;
-        }
-        if (id == R.id.action_terms) {
-            Intent intent=new Intent(MainActivity.this,Termsandconditions.class);
+
+
+        } else if (id == R.id.action_contactus) {
+            Intent intent=new Intent(MainActivity.this, Contact_Us.class);
             startActivity(intent);
             return true;
+
         }
+
+
         return super.onOptionsItemSelected(item);
     }
 

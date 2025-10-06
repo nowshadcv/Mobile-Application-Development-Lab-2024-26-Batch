@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".help">
-
+    tools:context=".ContactUs">
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Help"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Contact Us"
         android:textSize="30dp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="370dp"/>
+        android:gravity="center"
+
+        />
 
 </RelativeLayout>

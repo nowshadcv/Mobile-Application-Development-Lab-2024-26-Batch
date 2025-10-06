@@ -4,17 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".privacypolicy">
-
+    tools:context=".Setting">
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="370dp"
-        android:text="Privacy and Policy"
-        android:textColor="@color/black"
+        android:text="Settings"
         android:textSize="30dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="140dp"
+        android:layout_marginStart="140dp"/>
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.optionmenu;
+package com.example.optionmenu2025;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +15,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.optionmenu.databinding.ActivityMainBinding;
+import com.example.optionmenu2025.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -64,31 +64,31 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent intent=new Intent(MainActivity.this,Settings.class);
+            Intent intent=new Intent(MainActivity.this,settings.class);
             startActivity(intent);
             return true;
         }
         else
-        if (id == R.id.action_privacypolicy) {
+        if (id == R.id.privacypolicy) {
             Intent intent=new Intent(MainActivity.this,privacypolicy.class);
             startActivity(intent);
             return true;
         }
         else
-        if (id == R.id.action_help) {
+        if (id == R.id.help) {
             Intent intent=new Intent(MainActivity.this,help.class);
             startActivity(intent);
             return true;
         }
         else
-        if (id == R.id.action_terms) {
-            Intent intent=new Intent(MainActivity.this,terms.class);
+        if (id == R.id.terms) {
+            Intent intent=new Intent(MainActivity.this,termsandconditions.class);
             startActivity(intent);
             return true;
         }
         else
-        if (id == R.id.action_contactus) {
-            Intent intent=new Intent(MainActivity.this, contactus.class);
+        if (id == R.id.contact) {
+            Intent intent=new Intent(MainActivity.this,contactus.class);
             startActivity(intent);
             return true;
         }
