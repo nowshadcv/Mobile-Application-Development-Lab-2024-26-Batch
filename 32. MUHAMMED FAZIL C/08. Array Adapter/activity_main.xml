@@ -4,9 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".orange">
-    <ImageView
+    tools:context=".MainActivity">
+
+    <ListView
+        android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/orange"/>
+        android:layout_height="wrap_content"
+        android:divider="@color/black"
+        android:dividerHeight="2dp"
+        android:listSelector="@color/white"/>
+
 </RelativeLayout>
