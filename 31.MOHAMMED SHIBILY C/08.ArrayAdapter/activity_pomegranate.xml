@@ -4,13 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <ListView
-        android:id="@+id/list"
+    tools:context=".pomegranate">
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="@color/black"
-        android:dividerHeight="2dp"
-        android:listSelector="@color/black" />
+        android:layout_height="match_parent"
+        android:src="@drawable/pomegranate"/>
+
 </RelativeLayout>
