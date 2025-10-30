@@ -11,7 +11,7 @@ import android.widget.ListView;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    String fruitlist[]={"apple","orange","banana","dates"};
+    String fruitlist[]={"apple","orange","banana"};
     ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +30,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this, orange.class));
                 } else if (position == 2) {
                     startActivity(new Intent(MainActivity.this, banana.class));
-                } else if (position == 3) {
-                    startActivity(new Intent(MainActivity.this, dates.class));
-                } else if (position == 4) {
-                    startActivity(new Intent(MainActivity.this, cherry.class));
-                } else if (position == 5) {
-                    startActivity(new Intent(MainActivity.this, pomegranate.class));}
+                } 
             }
         });
     }
