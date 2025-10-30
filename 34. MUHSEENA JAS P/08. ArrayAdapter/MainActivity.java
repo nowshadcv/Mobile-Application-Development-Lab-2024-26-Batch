@@ -11,7 +11,7 @@ import android.widget.ListView;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    String fruitlist[]={"apple","orange","banana","dates","cherry","pomegranate"};
+    String fruitlist[]={"apple","orange","banana","dates"};
     ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
