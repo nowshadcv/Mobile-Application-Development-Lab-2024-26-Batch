@@ -27,16 +27,16 @@ public class MainActivity_2 extends AppCompatActivity {
         ImageView imageView=findViewById(R.id.img1);
         switch(index){
             case "1":
-                imageView.setImageResource(R.drawable.fazal);
+                imageView.setImageResource(R.drawable.apple);
                 break;
             case "2":
-                imageView.setImageResource(R.drawable.sura);
+                imageView.setImageResource(R.drawable.pineapple);
                 break;
             case "3":
-                imageView.setImageResource(R.drawable.ansar);
+                imageView.setImageResource(R.drawable.orange);
                 break;
             case "4":
-                imageView.setImageResource(R.drawable.nihal);
+                imageView.setImageResource(R.drawable.pomegranate);
                 break;
         }
     }
