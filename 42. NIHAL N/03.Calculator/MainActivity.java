@@ -1,4 +1,6 @@
 package com.example.calculator;
+
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -6,177 +8,61 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-    Button button0,button1,button2,button3,button4,button5,button6,button7,button8,button9,buttondot,buttonadd,buttonsub,buttondiv,buttonmul,buttonC,buttoneql;
-    EditText result;
-    float mvalueone,mvaluetwo;
-    boolean add,sub,mul,div;
+
+    EditText display;
+    double num1 = 0, num2 = 0;
+    char operator;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button0=(Button) findViewById(R.id.button0);
-        button1=(Button) findViewById(R.id.button1);
-        button2=(Button) findViewById(R.id.button2);
-        button3=(Button) findViewById(R.id.button3);
-        button4=(Button) findViewById(R.id.button4);
-        button5=(Button) findViewById(R.id.button5);
-        button6=(Button) findViewById(R.id.button6);
-        button7=(Button) findViewById(R.id.button7);
-        button8=(Button) findViewById(R.id.button8);
-        button9=(Button) findViewById(R.id.button9);
-        buttonC=(Button) findViewById(R.id.buttonC);
-        buttondot=(Button) findViewById(R.id.buttondot);
-        buttonadd=(Button) findViewById(R.id.buttonadd);
-        buttonsub=(Button) findViewById(R.id.buttonsub);
-        buttonmul=(Button) findViewById(R.id.buttonmul);
-        buttondiv=(Button) findViewById(R.id.buttondiv);
-        buttoneql=(Button) findViewById(R.id.buttoneql);
-        result=(EditText) findViewById(R.id.edt1);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                result.setText(result.getText()+"1");
-            }
-        });
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                result.setText(result.getText() + "2");
-            }
-        });
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                result.setText(result.getText() + "3");
-            }
-        });
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                result.setText(result.getText() + "4");
-            }
-        });
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                result.setText(result.getText() + "5");
-            }
-        });
-        button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                result.setText(result.getText() + "6");
-            }
-        });
-        button7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                result.setText(result.getText() + "7");
-            }
-        });
-        button8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                result.setText(result.getText() + "8");
-            }
-        });
-        button9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                result.setText(result.getText() + "9");
-            }
-        });
-        button0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                result.setText(result.getText() + "0");
-            }
-        });
-        buttondot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                result.setText(result.getText() + ".");
-            }
-        });
-        buttonC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                result.setText("");
-            }
-        });
-        buttonadd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(result == null) {
-                    result.setText("");
-                }
-                else {
-                    mvalueone = Float.parseFloat(result.getText()+" ");
-                    add = true;
-                    result.setText(null);
-                }
-            }
-        });
-        buttonsub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(result == null) {
-                    result.setText("");
-                }
-                else {
-                    mvalueone = Float.parseFloat(result.getText()+" ");
-                    sub = true;
-                    result.setText(null);
-                }
-            }
-        });
-        buttonmul.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(result == null) {
-                    result.setText("");
-                }
-                else {
-                    mvalueone = Float.parseFloat(result.getText()+" ");
-                    mul = true;
-                    result.setText(null);
-                }
-            }
-        });
-        buttondiv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(result == null) {
-                    result.setText("");
-                }
-                else {
-                    mvalueone = Float.parseFloat(result.getText()+" ");
-                    div = true;
-                    result.setText(null);
-                }
-            }
-        });
-        buttoneql.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mvaluetwo = Float.parseFloat(result.getText()+" ");
-                if( add==true) {
-                    result.setText(mvalueone+mvaluetwo+"");
-                    add = false;
-                }
-                if( sub==true) {
-                    result.setText(mvalueone-mvaluetwo+"");
-                    sub = false;
-                }
-                if( mul==true) {
-                    result.setText(mvalueone*mvaluetwo+"");
-                    mul = false;
-                }
-                if( div==true) {
-                    result.setText(mvalueone/mvaluetwo+"");
-                    div = false;
-                }
-            }
-        });
+
+        display = findViewById(R.id.display);
+
+        // Number Buttons
+        int[] numberIds = {R.id.btn0, R.id.btn1, R.id.btn2, R.id.btn3, R.id.btn4,
+                R.id.btn5, R.id.btn6, R.id.btn7, R.id.btn8, R.id.btn9};
+        View.OnClickListener numListener = v -> {
+            Button b = (Button) v;
+            display.append(b.getText());
+        };
+        for (int id : numberIds) findViewById(id).setOnClickListener(numListener);
+
+        // Operators
+        findViewById(R.id.btnAdd).setOnClickListener(v -> setOperator('+'));
+        findViewById(R.id.btnSub).setOnClickListener(v -> setOperator('-'));
+        findViewById(R.id.btnMul).setOnClickListener(v -> setOperator('*'));
+        findViewById(R.id.btnDiv).setOnClickListener(v -> setOperator('/'));
+
+        // Equal
+        findViewById(R.id.btnEqual).setOnClickListener(v -> calculate());
+
+        // Clear
+        findViewById(R.id.btnClear).setOnClickListener(v -> display.setText(""));
+    }
+
+    void setOperator(char op) {
+        num1 = Double.parseDouble(display.getText().toString());
+        operator = op;
+        display.setText("");
+    }
+
+    void calculate() {
+        num2 = Double.parseDouble(display.getText().toString());
+        double result = 0;
+
+        switch (operator) {
+            case '+': result = num1 + num2; break;
+            case '-': result = num1 - num2; break;
+            case '*': result = num1 * num2; break;
+            case '/':
+                if (num2 == 0) {
+                    display.setText("Error");
+                    return;
+                } else result = num1 / num2;
+                break;
+        }
+        display.setText(String.valueOf(result));
     }
 }
